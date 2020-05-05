@@ -14,11 +14,13 @@
         <nav>
           <ul>
             <li><router-link :to="{ path: '/' }">Home</router-link></li>
-            <li><router-link :to="{ path: '/data' }">Data</router-link></li>
-            <li><a href="https://emer2gent.org/">The Alliance</a></li>
             <li>
-              <a href="https://github.com/odileeds/emer2gent-data">GitHub</a>
+              <router-link :to="{ path: '/catalogue' }">Catalogue</router-link>
             </li>
+            <li>
+              <router-link :to="{ path: '/add' }">Add Data</router-link>
+            </li>
+            <li><a href="https://emer2gent.org/">The Alliance</a></li>
           </ul>
         </nav>
       </div>

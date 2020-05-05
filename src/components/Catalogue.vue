@@ -1,13 +1,10 @@
 <template>
   <div class="holder">
-    <div v-if="selectedOrgs.length > 1">
+    <div v-if="!$route.params.org">
       <h2>Organisations</h2>
       <ul class="grid">
         <li v-for="(org, i) in selectedOrgs" :key="i">
-          <router-link
-            :to="{ name: 'Catalogue', params: { org } }"
-            class="c2-bg"
-          >
+          <router-link :to="{ path: `/catalogue/${org}` }" class="c2-bg">
             <h3>{{ $root.index[org].author }}</h3>
             <p>{{ shortDesc($root.index[org].description) }}</p>
           </router-link>

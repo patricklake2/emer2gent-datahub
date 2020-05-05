@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+import AddData from '../components/AddData.vue';
 import Catalogue from '../components/Catalogue.vue';
-// import Data from '../components/Data.vue';
-import DetailedView from '../components/DetailedView.vue';
+import Dataset from '../components/Dataset.vue';
 import Homepage from '../components/Homepage.vue';
 
 Vue.use(VueRouter);
@@ -15,42 +15,25 @@ const routes = [
     component: Homepage,
   },
   {
-    path: '/data',
+    path: '/catalogue',
     name: 'Catalogue',
     component: Catalogue,
   },
   {
-    path: '/data/:org',
+    path: '/catalogue/:org',
     name: 'Catalogue',
     component: Catalogue,
   },
   {
-    path: '/data/:org/:id',
+    path: '/catalogue/:org/:id',
     name: 'Details',
-    component: DetailedView,
+    component: Dataset,
   },
-  // {
-  //   path: '/data',
-  //   name: 'Data',
-  //   component: Data,
-  //   children: [
-  //     {
-  //       path: '',
-  //       name: 'Catalogue',
-  //       component: Catalogue,
-  //     },
-  //     {
-  //       path: ':org',
-  //       name: 'Catalogue',
-  //       component: 'Catalogue',
-  //     },
-  //     {
-  //       path: ':org/:id',
-  //       name: 'Details',
-  //       component: DetailedView,
-  //     },
-  //   ],
-  // },
+  {
+    path: '/add',
+    name: 'Add Data',
+    component: AddData,
+  },
 ];
 
 const router = new VueRouter({
