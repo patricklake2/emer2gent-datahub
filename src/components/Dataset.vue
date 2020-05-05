@@ -3,6 +3,9 @@
     <div class="holder">
       <h2>{{ dataset.title }}</h2>
       <p>{{ dataset.description }}</p>
+      <button @click="() => $router.go(-1)" id="back" class="s1-bg">
+        Back
+      </button>
     </div>
     <section>
       <div class="holder">
@@ -86,6 +89,11 @@ h3 {
   float: right;
   position: relative;
   top: 30px;
+}
+#back {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 #resources,
 #references {
