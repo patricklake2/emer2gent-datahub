@@ -1,20 +1,17 @@
 <template>
   <div class="holder">
-    <p>Detailed view for dataset id {{ datasetID }}</p>
+    <h2>{{ dataset.title }}</h2>
+    <p>{{ dataset.description }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  props: {
-    index: {
-      type: Object,
-      required: true,
-    },
-  },
   computed: {
-    datasetID() {
-      return this.$route.params.id;
+    dataset() {
+      const org = this.$route.params.org;
+      const id = this.$route.params.id;
+      return this.$root.index[org].datasets.find(entry => entry.id === id);
     },
   },
 };
