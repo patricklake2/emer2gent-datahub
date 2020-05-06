@@ -7,7 +7,7 @@
       add it to your own index.
     </p>
     <div ref="formContainer"></div>
-    <div class="submit">
+    <div class="controls">
       <button type="button" class="c3-bg" @click="submit()">
         Submit to public Index
       </button>
@@ -34,7 +34,6 @@ export default {
   data() {
     return {
       form: null,
-      formData: {},
     };
   },
   mounted() {
@@ -45,9 +44,18 @@ export default {
     this.form.render(this.$refs.formContainer);
   },
   methods: {
-    submit() {
+    async submit() {
       const valid = this.form.validate();
-      if (valid) submitForm(this.form.getData());
+      if (valid) {
+        const status = await submitForm(this.form.getData());
+        console.log(status);
+        if (status === 200) {
+          alert('Form submitted successfully!');
+          document.querySelector('.brutusin-form').reset();
+        } else {
+          alert('There was a problem submitting your form to the server.');
+        }
+      }
     },
     download() {
       const valid = this.form.validate();
@@ -57,20 +65,25 @@ export default {
           encodeURIComponent(JSON.stringify(this.form.getData()));
         this.$refs.downloadLink.setAttribute('href', dataStr);
         this.$refs.downloadLink.click();
+        document.querySelector('.brutusin-form').reset();
       }
     },
+    reset() {},
   },
 };
 </script>
 
 <style>
-.submit {
+.controls {
   text-align: center;
   margin-top: 25px;
 }
-.submit button {
+.controls button {
   width: 200px;
   height: 50px;
+}
+.submitted {
+  color: green;
 }
 .error {
   color: red;

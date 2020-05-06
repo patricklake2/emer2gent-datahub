@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import AddData from '../components/AddData.vue';
+import AddDataForm from '../components/AddDataForm.vue';
 import Catalogue from '../components/Catalogue.vue';
 import Dataset from '../components/Dataset.vue';
 import Homepage from '../components/Homepage.vue';
@@ -33,7 +33,7 @@ const routes = [
   {
     path: '/add',
     name: 'Add Data',
-    component: AddData,
+    component: AddDataForm,
   },
   {
     path: '*',
