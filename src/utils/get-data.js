@@ -4,7 +4,14 @@ const fetchJSON = async url => {
   return data;
 };
 
-export default async function getIndex() {
+async function getSchema() {
+  const schema = await fetchJSON(
+    'https://raw.githubusercontent.com/odileeds/emer2gent-data/master/schemas/subindex-v1.0.json'
+  );
+  return schema;
+}
+
+async function getIndex() {
   const rootIndex = await fetchJSON(
     'https://raw.githubusercontent.com/odileeds/emer2gent-data/master/index.json'
   );
@@ -32,3 +39,4 @@ export default async function getIndex() {
     }
 See schema - https://github.com/odileeds/emer2gent-data/blob/master/schemas/subindex-v1.0.json
 */
+export { getIndex, getSchema };
