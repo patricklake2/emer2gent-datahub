@@ -30,7 +30,7 @@
 
 <style scoped>
 .emergent-header {
-  background-image: url('../assets/emergent-bg.png');
+  background-image: url('../assets/emergent-bg-small.png');
 }
 .emergent-header h1 {
   padding: 1em;
