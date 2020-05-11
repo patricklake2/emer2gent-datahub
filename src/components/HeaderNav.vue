@@ -7,7 +7,7 @@
     <header class="emergent-header">
       <div class="glory">
         <div class="holder">
-          <h1>Emer<sup>2</sup>gent Alliance Data</h1>
+          <h1>Emergent Alliance Data</h1>
         </div>
       </div>
       <div class="holder opacity">
