@@ -1,0 +1,20 @@
+<table class="odi">
+  {% for attr in include.attrs %}
+  {% if include.data[attr.prop] %}
+  <tr>
+    <th>{{ attr.name }}</th>
+    <td>
+      {% if attr.type == "url" %}
+      <a href="{{ include.data[attr.prop] }}">{{ include.data[attr.prop] }}</a>
+      {% elsif attr.type == "email" %}
+      <a href="mailto:{{ include.data[attr.prop] }}">{{ include.data[attr.prop] }}</a>
+      {% elsif attr.type == "array" %}
+      {{ include.data[attr.prop] | join: ", " }}
+      {% else %}
+      {{ include.data[attr.prop] }}
+      {% endif %}
+    </td>
+  </tr>
+  {% endif %}
+  {% endfor %}
+</table>

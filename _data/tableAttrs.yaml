@@ -1,0 +1,46 @@
+main:
+  - prop: id
+    name: ID
+  - prop: sharing
+    name: Resource Sharing
+  - prop: topics
+    name: Topics
+    type: array
+  - prop: tags
+    name: Tags / Keywords
+    type: array
+  - prop: licence
+    name: Licence
+  - prop: createdAt
+    name: Created At
+  - prop: updatedAt
+    name: Last Updated
+  - prop: update_frequency
+    name: Update Frequency
+  - prop: author
+    name: Author
+  - prop: author_email
+    name: Author Email
+    type: email
+  - prop: url
+    name: URL
+    type: url
+  - prop: maintainer
+    name: Maintainer / Steward
+  - prop: maintainer_email
+    name: Maintainer / Steward Email
+    type: email
+resource:
+  - prop: type
+    name: Type
+  - prop: format
+    name: Format
+  - prop: check_size
+    name: Size (bytes)
+  - prop: temporal_coverage_from
+    name: Coverage From
+  - prop: temporal_coverage_to
+    name: Coverage To
+  - prop: url
+    name: URL
+    type: url

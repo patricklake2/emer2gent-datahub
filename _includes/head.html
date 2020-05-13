@@ -1,0 +1,12 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  {% if page.stylesheets %}
+  {% for s in page.stylesheets %}<link rel="stylesheet" href="{{ s }}">{% endfor %}
+  {% else %}
+  <link rel="stylesheet" href="https://odileeds.org/resources/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  {% endif %}
+  <link rel="icon" href="/assets/img/emer2gent-1-32x32.png" sizes="32x32" />
+</head>

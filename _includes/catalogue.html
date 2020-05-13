@@ -1,0 +1,21 @@
+<h2>
+  {% if include.org %}
+  {{ site.data.allDatasets[include.org].author }}
+  {% else %}
+  All Datasets
+  {% endif %}
+</h2>
+<ul class="grid">
+  {% for org in site.data.allDatasets %}
+  {% if include.org == nil or org[0] == include.org %}
+  {% for item in org[1].datasets %}
+  <li>
+    <a href="/catalogue/{{ org[0] }}/{{ item.id }}" class="c3-bg">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description | | truncate: 180, '...'}}</p>
+    </a>
+  </li>
+  {% endfor %}
+  {% endif %}
+  {% endfor %}
+</ul>
