@@ -4,8 +4,6 @@
 name: Update Catalogue
 
 on:
-  push:
-    branches: [ master ]
   schedule:
     - cron: 0 * * * *
 
