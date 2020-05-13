@@ -1,0 +1,299 @@
+---
+layout: default
+title: Emergent | Add Data
+stylesheets:
+  - '/assets/css/add.css'
+---
+
+<div class="doublepadded">
+  <div class="holder">
+    <h2>Add Data</h2>
+    <p>This page allows you to enter details about a dataset and submit them to our public index, or download your
+      input as JSON, so that you can manually add it to your own index.</p>
+  
+    <form id="emer2gent-add" action="https://endueuus9695p50.m.pipedream.net" method="POST">
+  
+      <div class="row">
+        <label for="id" class="label"><sup>*</sup>Unique ID:</label>
+        <div class="input">
+          <input id="id" name="id" type="text" required aria-required="true">
+          <p class="desc">A chosen ID for this dataset which is unique within this index.</p>
+        </div>
+      </div>
+  
+      <fieldset class="row">
+        <legend class="label">Resource sharing:</legend>
+        <div class="input" id="sharing">
+          <input id="sharing-public" type="radio" name="sharing" value="public"><label for="sharing-public">Public</label>
+          <br><input id="sharing-alliance" type="radio" name="sharing" value="alliance"><label
+            for="sharing-alliance">Alliance</label>
+          <br><input id="sharing-private" type="radio" name="sharing" value="private" checked="checked"><label
+            for="sharing-private">Private</label>
+          <p class="desc">Whether this datasets resources are be public, private to the contbutor, or to be shared
+            with the alliance only.</p>
+        </div>
+      </fieldset>
+  
+      <fieldset class="row">
+        <legend class="label">Topics:</legend>
+        <div class="input" id="topics">
+          {% for topic in site.data.topics %}
+          <div class="toggle">
+            <input id="{{ topic[0] }}" type="checkbox" name="topics" value="{{ topic[0] }}">
+            <label for="{{ topic[0] }}">{{ topic[1].title }}</label>
+          </div>
+          {% endfor %}
+          <p class="desc">Array of topics which this dataset is included in. Alliance to agree on set list of possible
+            values for this field for consistency.</p>
+        </div>
+      </fieldset>
+  
+      <div class="row">
+        <label for="tags" class="label">Tags:</label>
+        <div class="input">
+          <input id="tags" name="tags" type="text">
+          <p class="desc">Array of keywords/tags associated with the dataset. Helps with searches and grouping.</p>
+        </div>
+      </div>
+  
+      <div class="row">
+        <label for="licence" class="label" id="label-licence">Licence:</label>
+        <div class="input">
+          <input id="licence" name="licence" type="text" placeholder="e.g. MIT, CC0-1, OGL-UK-3 etc">
+          <p class="desc"><a href="https://spdx.org/licenses/" target="_other">SPDX Identifier</a> for the licence the
+            resources are released under.</p>
+        </div>
+      </div>
+  
+      <div class="row">
+        <label for="createdAt" class="label">Creation date:</label>
+        <div class="input">
+          <input id="createdAt" name="createdAt" type="text">
+          <p class="desc">When this dataset was added to the index. Time is optional, but if you do include it,
+            include the time zone too. <span class="no-js">A valid date-time string in <a
+                href="https://en.wikipedia.org/wiki/ISO_8601">ISO8601 format</a></span></p>
+        </div>
+      </div>
+  
+      <div class="row">
+        <label for="updatedAt" class="label">Last updated:</label>
+        <div class="input">
+          <input id="updatedAt" name="updatedAt" type="text">
+          <p class="desc">When this index entry was last edited (not when the resources themselves were updated).
+            <span class="no-js">A valid date-time string in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO8601
+                format</a>.</span></p>
+        </div>
+      </div>
+  
+      <div class="row">
+        <label for="update_frequency" class="label">Update frequency:</label>
+        <div class="input">
+          <select id="update_frequency" name="update_frequency">
+            <option value=""></option>
+            <option value="annually">annually</option>
+            <option value="monthly">monthly</option>
+            <option value="quarterly">quarterly</option>
+            <option value="weekly">weekly</option>
+            <option value="daily">daily</option>
+            <option value="hourly">hourly</option>
+            <option value="real time">real time</option>
+            <option value="one off">one off</option>
+          </select>
+          <p class="desc">How often the resources are updated. See examples for allowed values.</p>
+        </div>
+      </div>
+  
+      <div class="row">
+        <label for="title" class="label">Title:</label>
+        <div class="input">
+          <input id="title" name="title" type="text">
+          <p class="desc">The title for the dataset.</p>
+        </div>
+      </div>
+  
+      <div class="row">
+        <label for="url" class="label">Homepage:</label>
+        <div class="input">
+          <input id="url" name="url" type="text">
+          <p class="desc">URL for the source/homepage of the dataset.</p>
+        </div>
+      </div>
+  
+      <div class="row">
+        <label for="author" class="label">Author:</label>
+        <div class="input">
+          <input id="author" name="author" type="text">
+          <p class="desc">Who created / published the data. This may be an organisation responsible for a dataset.</p>
+        </div>
+      </div>
+  
+      <div class="row">
+        <label for="author_email" class="label">Author email:</label>
+        <div class="input">
+          <input id="author_email" name="author_email" type="email">
+          <p class="desc">Contact email for author specified above if available / applicable</p>
+        </div>
+      </div>
+  
+      <div class="row">
+        <label for="maintainer" class="label">Maintainer:</label>
+        <div class="input">
+          <input id="maintainer" name="maintainer" type="text">
+          <p class="desc">Maintainer / data steward - i.e. who is ensuring this index entry is up to date and checking
+            the quality of the data?</p>
+        </div>
+      </div>
+  
+      <div class="row">
+        <label for="maintainer_email" class="label">Maintainer email:</label>
+        <div class="input">
+          <input id="maintainer_email" name="maintainer_email" type="email">
+          <p class="desc">Email for maintainer named above, if available.</p>
+        </div>
+      </div>
+  
+      <div class="row">
+        <label for="description" class="label">Description:</label>
+        <div class="input">
+          <textarea id="description" name="description"></textarea>
+          <p class="desc">Brief description of the dataset.</p>
+        </div>
+      </div>
+  
+      <div class="row">
+        <p class="label">Resources</p>
+        <div class="input">
+          <ul id="resources" class="list">
+            <li>
+              <div>
+                <div class="row">
+                  <label for="resources-type-0" class="label">Resource Type:<sup>*</sup></label>
+                  <div class="input">
+                    <select id="resources-type-0" name="resources-type-0">
+                      <option value="data">Data</option>
+                      <option value="vis">Visualisation</option>
+                      <option value="cat">Catalogue</option>
+                    </select>
+                    <p class="desc">Type of resource.</p>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <label for="resources-url-0" class="label">URL:<sup>*</sup></label>
+                  <div class="input">
+                    <input id="resources-url-0" name="resources-url-0" type="url">
+                    <p class="desc">URL of the resource. Should be a direct link to the resource being described -
+                      e.g. http://website.com/file1.csv, not http://website.com/downloads</p>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <label for="resources-format-0" class="label">Format:<sup>*</sup></label>
+                  <div class="input">
+                    <input id="resources-format-0" name="resources-format-0" type="text">
+                    <p class="desc">File type, or 'html' for a website etc.</p>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <label for="resources-check_size-0" class="label">Size:</label>
+                  <div class="input">
+                    <input id="resources-check_size-0" name="resources-check_size-0" type="text">
+                    <p class="desc">Size of resource in bytes</p>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <label for="resources-temporal_coverage_from-0" class="label">Coverage start date<span class="no-js">
+                      (YYYY-MM-DD)</span>:</label>
+                  <div class="input">
+                    <input id="resources-temporal_coverage_from-0" name="resources-temporal_coverage_from-0" type="date"
+                      class="datetime">
+                    <p class="desc">When the data starts. <span class="no-js">A valid date string in <a
+                          href="https://en.wikipedia.org/wiki/ISO_8601">ISO8601 format</a>.</span></p>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <label for="resources-temporal_coverage_to-0" class="label">Coverage end date<span class="no-js">
+                      (YYYY-MM-DD)</span>:</label>
+                  <div class="input">
+                    <input id="resources-temporal_coverage_to-0" name="resources-temporal_coverage_to-0" type="date"
+                      class="datetime">
+                    <p class="desc">When the data starts. <span class="no-js">A valid date string in <a
+                          href="https://en.wikipedia.org/wiki/ISO_8601">ISO8601 format</a>.</span></p>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <label for="resources-title-0" class="label">Title:</label>
+                  <div class="input">
+                    <input id="resources-title-0" name="resources-title-0" type="text">
+                    <p class="desc">A name for the resource.</p>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <label for="resources-description-0" class="label">Description:</label>
+                  <div class="input">
+                    <textarea id="resources-description-0" name="resources-description-0"></textarea>
+                    <p class="desc">Brief description of the resource.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <p class="desc">An array of resources within this dataset, i.e. data files, visualisations etc.</p>
+        </div>
+      </div>
+      <div class="row">
+        <p class="label">References</p>
+        <div class="input">
+          <ul id="references" class="list">
+            <li>
+              <div>
+                <div class="row">
+                  <label for="references-url-0" class="label">URL:</label>
+                  <div class="input">
+                    <input id="references-url-0" name="references-url-0" type="url">
+                    <p class="desc">URL of the referenced dataset if it isn't contained in this index.</p>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <label for="references-description-0" class="label">Description:<sup>*</sup></label>
+                  <div class="input">
+                    <input id="references-description-0" name="references-description-0" type="text">
+                    <p class="desc">Brief description of the reference - say why it is included.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <p class="desc">Any other datasets/resources which you think are required to be able to fully make use of
+            this dataset. Dependencies should be referred to by index ID or URL.</p>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div></div>
+        <div class="form-submit">
+          <input type="submit" class="emergent button" value="Submit to public index" /> or <button type="button"
+            id="download">Download as JSON</button>
+          <p class="small">If you choose to submit to the public index, the meta data provided above will be stored in
+            a public repository on Github. By submitting you agree that the meta data you provide (including any
+            optional email addresses provided) can be published by <a href="https://odileeds.org/">ODI Leeds</a> under
+            an MIT licence.</p>
+        </div>
+      </div>
+  
+      <label for="json">Output</label>
+      <textarea id="json" name="json"></textarea>
+  
+  
+    </form>
+  
+  </div>
+</div>
+
+<script src="/assets/js/form.js"></script>

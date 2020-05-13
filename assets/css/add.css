@@ -1,0 +1,137 @@
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+ /* HTML5 display-role reset for older browsers */
+ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ body { line-height: 1em; }
+ ol, ul { list-style: none; }
+ blockquote, q { quotes: none; }
+ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+ table { border-collapse: collapse; border-spacing: 0; }
+ /* apply a natural box layout model to all elements */
+ *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+ /* End of reset */
+ 
+ 
+ /* .emergent-header { background: #10069f; } */
+ .emergent-header { background-image: url('/assets/img/emergent-bg-small.png'); font-weight: 300;}
+ .emergent-header h1 { padding:1em; font-size: 3rem; color: white; }
+ .opacity { background-color:rgba(0,0,0,.5); border-top-left-radius:10px; border-top-right-radius:10px; }
+ .emergent, .emergent.button { background-color: #0a1b9f; color: white; }
+ 
+ .holder { position:relative; width:1080px; max-width:100%; margin:auto; }
+ .glory .holder { display: block; text-align: center; position: relative; height: 100%; padding-top: 1em; }
+ 
+ body { background-color:#000; font-family:"Roboto",Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif; font-size:16px; color:#efefef; margin:0; padding:0; line-height:1.44em; text-rendering:optimizeLegibility; }
+ header { width:100%; padding:0; font-size:1.2em; }
+ header nav ul { width:100%; text-align:center; }
+ header nav li { display:inline-block; }
+ header nav li a { padding:.75em 1em; }
+ header nav li a, header nav li form { width:100%; display:inline-block; color:inherit; }
+ header nav li a:focus, header nav li a:hover { background-color:#efefef; color:#000; }
+ header .holder { padding-left:0; }
+ header .holder nav { line-height:1em; }
+ #main { background-color:#fff; color:#333; min-height: 60vh; }
+ #main .holder, footer .holder { padding:1em 1em; }
+ .padded { padding:1em; }
+ .doublepadded { padding:2em; }
+ h1 { font-size:2em; margin-top:1em; text-align: center; }
+ h2 { font-size:1.7em; margin-top:1.7647058823529411em; font-weight:500; margin-bottom: 1em; }
+ h3 { font-size:1.4em; margin-top:1.428571em; }
+ h1:first-child, h2:first-child, h3:first-child { margin-top:0; }
+ strong { font-weight:700; }
+ em { font-style:italic; }
+ h2 a, h3 a, p a { color:#2254f4; text-decoration:underline; }
+ 
+.button, button { border:0; font-size:1em; background-color:#efefef; color:#000; text-decoration:none!important; display:inline-block; padding:.5em 1em; cursor:pointer; vertical-align:top; line-height:1.25em; }
+ a:focus,a:hover { text-decoration:underline; }
+ a:visited { color:inherit; }
+ header a { text-decoration:none; }
+ footer { width:100%; padding:1em; padding-bottom:3em; }
+ 
+ .hamburger { display:none; }
+ label.sub { display: inline-block; margin-right: 0.25em; }
+ 
+ input, select { line-height: 2em; }
+ form select { height: 2em; vertical-align:top; }
+ form .row { display: grid; grid-template-columns: 30% 1fr; grid-gap: 0.25em; padding: 1em; max-width: 100%; }
+ form .label { text-align: right; line-height: 1.5em; padding-right: 0.5em; }
+ form .label, form legend { font-weight: bold; }
+ form legend { float: left; width: 100%; padding: 0; }
+ form select.tz { width: auto; display: inline-block; height: 2em; box-sizing: content-box; }
+ form input.datetime { margin-right: 0.25em; }
+ form input, form select, form textarea { background: #fff; border: 1px solid #9c9c9c; font-size: 1em; text-align: left; margin: 0px; padding: 0 0.5em; width:100%; min-width:80px; max-width: 100%; }
+ form p.desc, form p.small { margin-top: 0.5em; font-size: 0.9em; line-height: 1.4em; }
+ form .label sup { color: #D60303; }
+ form .input input[type=checkbox],form .input input[type=radio] { margin-right: 0.5em; }
+ form .input input[type=date], form .input input[type=time], form .input input[type=datetime-local] { width: auto; }
+ form input[type=checkbox], form input[type=radio] { width:auto!important; min-width:auto!important; }
+ form textarea { height: 8em; }
+ form .error { border-color:#D60303; }
+ form .error-message { color:#D60303; }
+ form button, form .button { background: lightgrey; padding: 0.5em; width: auto; border: 0; }
+ form button:hover, form .button:hover { background: gold; color: black; }
+ form .toggle { display: inline-block; margin-right: 0.25em; position: relative; margin-bottom: 0.25em; }
+ form .toggle input { position: absolute; width: 100%; height: auto; transform: translate3d(0,-50%,0); top: 50%; opacity: 1; margin-left: 0.5em; }
+ form .toggle label { padding: 0.5em; padding-left: 1.5em; cursor: pointer; background: #efefef; display: block; }
+ form .toggle input:checked + label { background: gold; }
+ form .toggle input:focus + label { outline: 3px solid gold!important; }
+ form .row input ~ p.desc, form .row textarea ~ p.desc, form .row select ~ p.desc { opacity: 0.2; }
+ input:focus, textarea:focus, select:focus { outline: 3px solid gold!important; }
+ form .toggle input:focus { outline: none!important; }
+ input:invalid, input.invalid { outline: 3px solid #D60303!important; }
+ form .row input:focus + p.desc,
+ form .row:hover input + p.desc,
+ form .row textarea:focus + p.desc,
+ form .row:hover textarea + p.desc,
+ form .row select:focus + p.desc,
+ form .row:hover select + p.desc { opacity: 1; }
+ 
+ form .list li { display: block; border: 1px solid #ccc; display: grid; grid-template-columns: 1fr auto; margin-bottom: 0.5em; background: #efefef; }
+ form .list li:last-child { margin-bottom: 0.5em; }
+ form .list li > .remove { background-color: darkgrey; color: white; cursor: pointer; padding: 0.5em; }
+ 
+ form .form-submit { line-height: 2em; }
+ form #licence-spdx, form #creation-date, form #creation-time, form #update-date, form #update-time { display: none; }
+ form #licence-spdx { margin-bottom: 0.25em; }
+ 
+ #output { width: 100%; height: 20em; }
+ .msg { padding: 0.5em; position: relative; padding-left: 2em; }
+ .warning { background-color: #FEEFB3; color: #9F6000; }
+ .warning::before { content: "⚠"; position: absolute; left: 0.5em; }
+ .info { background-color: #d9edf7; color: #31708f; padding-left: 0.5em; }
+ .error { background-color: #FFBABA; color: #D8000C; }
+ .error::before { content: "⛔"; position: absolute; left: 0.5em; }
+ 
+ 
+ @media only screen and (max-width:1080px) {
+ 
+   .hamburger, header .holder {
+     transition: left 0.3s ease-in;
+   }
+   header, footer, #main {
+     width: 100%;
+     transition: margin-left 0.3s ease-in;
+   }
+   .hamburger { cursor:pointer; display:block; width:3em; height:3em; position:absolute; left:0; top:0; font-size:1em; margin:0; }
+   label.hamburger { z-index:1; background-color:#000; }
+   label.hamburger .nv { display:none; }
+   input.hamburger { z-index:1005; opacity:.01; }
+   label.hamburger:after { position:absolute; padding:.25em; width:100%; height:100%; top:0; left:0; content:"\2261"; font-size:2em; text-align:center; line-height:1em; }
+   input.hamburger:checked ~ label.hamburger, input.hamburger:hover ~ label.hamburger { background:#999; }
+   input.hamburger:checked ~ header>.holder { left:0; }
+   input.hamburger:checked,input.hamburger:checked + label.hamburger { left:75%; }
+   input.hamburger:checked ~ #main,input.hamburger:checked ~ footer,input.hamburger:checked ~ header { margin-left:75%; width:100%; }
+   .hamburger, header .holder { transition:left .3s ease-in; }
+   header nav li { display:block; }
+   header > .holder { background:#000; top:0; display:block; position:absolute; left:-75%; bottom:0; width:75%; z-index:10; border-right:1px solid hsla(0,0%,100%,.8); }
+   header nav a { text-align:right; }
+   header .holder.opacity { border-radius: 0px; }
+   .emergent-header h1 { line-height: 1em; font-size: 24px; }
+   
+   .doublepadded { padding: 1em; }
+   form .row { grid-template-columns: 100%; padding-left: 0; padding-right: 0; }
+   form .label { grid-column: 1; text-align: left; }
+   form .input { grid-column: 1; }
+ }
+ 

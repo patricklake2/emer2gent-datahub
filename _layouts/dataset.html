@@ -1,0 +1,56 @@
+---
+layout: default
+---
+<div id="dataset" class="doublepadded">
+  <div class="holder">
+    <h2>{{ page.data.title }}</h2>
+    <p>{{ page.data.description }}</p>
+  </div>
+  <section>
+    <div class="holder">
+      <h3>Metadata</h3>
+      {% include table.html attrs=site.data.tableAttrs.main data=page.data %}
+    </div>
+  </section>
+  {% if page.data.resources %}
+  <section id="resources">
+    <div class="holder">
+      <h3>Resources</h3>
+      <ul>
+        {% for resource in page.data.resources %}
+        <li>
+          <a href="{{ resource.url }}">
+            <h4>
+              {% if resource.title %}
+              {{ resource.title }}
+              {% else %}
+              (No Title)
+              {% endif %}
+            </h4>
+          </a>
+          {% if resource.description %}
+          <p>{{ resource.description }}</p>
+          {% endif %}
+          {% include table.html attrs=site.data.tableAttrs.resource data=resource %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  {% endif %}
+  {% if page.data.references %}
+  <section id="references">
+    <div class="holder">
+      <h3>References</h3>
+      <ul>
+        {% for ref in page.data.references %}
+        <li>
+          <a href="{{ ref.url }}">{{ ref.url }}</a>
+          <p>{{ ref.description }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  {% endif %}
+</div>
