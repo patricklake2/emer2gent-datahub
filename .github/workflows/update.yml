@@ -4,8 +4,6 @@
 name: Update Catalogue
 
 on:
-  push:
-    branches: [ master ]
   schedule:
     - cron: 0 * * * *
 
@@ -30,7 +28,7 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
-        git commit -m "Automated update at $(date)"
+        git commit -m "Automated update at $(date)" || exit 0
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
