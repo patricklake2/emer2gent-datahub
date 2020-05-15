@@ -1,7 +1,11 @@
 <ul class="grid">
   {% for item in include.items %}
   <li>
+    {% if item.externalUrl %}
+    <a href="{{ item.externalUrl }}" class="{{ item.class }}">
+    {% else %}
     <a href="{{ item.url }}" class="{{ item.class }}">
+    {% endif %}
       <h2>{{ item.title }}</h2>
       <p>{{ item.desc }}</p>
     </a>

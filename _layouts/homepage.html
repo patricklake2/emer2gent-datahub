@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<div class="holder">
+  <div id="top" class="padded c3-bg">
+    {{ content }}
+  </div>
+  {% include linkgrid.html items=page.links %}
+  <h2>News / Blogs</h2>
+  {% include linkgrid.html items=site.posts %}
+</div>
