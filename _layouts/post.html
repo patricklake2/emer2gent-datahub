@@ -1,3 +1,29 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body class="blog">
+    {% include header.html %}
+    <div id="main">
+      <div class="header-colour">
+        <div class="holder"><h1>{{ page.title }}</h1></div>
+      </div>
+      <div class="holder">
+        <div id="left">
+          {{ content }}
+        </div>
+        <div id="right">
+          <a class="c4-bg padded person">
+            <h3>{{ page.author }}</h3>
+            <p>{{ page.authorDesc }}</p>
+          </a>
+          <div class="b3-bg padded">
+            <time class="airdate">
+              Published: {{ page.date | date: '%a %e %B %Y, %k:%M' }}
+            </time>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
