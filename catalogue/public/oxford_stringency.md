@@ -25,5 +25,10 @@ data:
     systematically collects information on several different common policy
     responses governments have taken, scores the stringency of such measures,
     and aggregates these scores into a common Stringency Index.
+  resources:
+    - url: >-
+        https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv
+      format: csv
+      title: Actual csv that is updated everyday
 
 ---
