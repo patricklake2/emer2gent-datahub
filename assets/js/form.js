@@ -626,7 +626,7 @@
   }
 
   function buildJSON() {
-    var json, ts, tags, i;
+    var json, ts, challenges, tags, i;
     json = "";
     json = buildJSONLine('id', json);
     json = buildJSONLine('sharing', json);
@@ -637,6 +637,14 @@
         if (ts[i].checked) topicstr += (topicstr ? ',' : '') + '"' + ts[i].value + '"';
       }
       json += (json ? ',\n' : '') + '\t"topics":[' + topicstr + ']';
+    }
+    challenges = document.forms['emer2gent-add'].elements['challenges'];
+    if (challenges) {
+      challengeStr = "";
+      for (i = 0; i < ts.length; i++) {
+        if (challenges[i].checked) challengeStr += (challengeStr ? ',' : '') + '"' + challenges[i].value + '"';
+      }
+      json += (json ? ',\n' : '') + '\t"challenges":[' + challengeStr + ']';
     }
     tags = document.forms['emer2gent-add'].elements['tags'].value.split(/ ?; ?/);
     tagstr = "";

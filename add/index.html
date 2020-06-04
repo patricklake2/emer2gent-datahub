@@ -2,7 +2,7 @@
 layout: default
 title: Emergent | Add Data
 stylesheets:
-  - '/assets/css/add.css'
+- '/assets/css/add.css'
 ---
 
 <div class="doublepadded">
@@ -10,9 +10,9 @@ stylesheets:
     <h2>Add Data</h2>
     <p>This page allows you to enter details about a dataset and submit them to our public index, or download your
       input as JSON, so that you can manually add it to your own index.</p>
-  
+
     <form id="emer2gent-add" action="https://endueuus9695p50.m.pipedream.net" method="POST">
-  
+
       <div class="row">
         <label for="id" class="label"><sup>*</sup>Unique ID:</label>
         <div class="input">
@@ -20,11 +20,12 @@ stylesheets:
           <p class="desc">A chosen ID for this dataset which is unique within this index.</p>
         </div>
       </div>
-  
+
       <fieldset class="row">
         <legend class="label">Resource sharing:</legend>
         <div class="input" id="sharing">
-          <input id="sharing-public" type="radio" name="sharing" value="public"><label for="sharing-public">Public</label>
+          <input id="sharing-public" type="radio" name="sharing" value="public"><label
+            for="sharing-public">Public</label>
           <br><input id="sharing-alliance" type="radio" name="sharing" value="alliance"><label
             for="sharing-alliance">Alliance</label>
           <br><input id="sharing-private" type="radio" name="sharing" value="private" checked="checked"><label
@@ -33,7 +34,7 @@ stylesheets:
             with the alliance only.</p>
         </div>
       </fieldset>
-  
+
       <fieldset class="row">
         <legend class="label">Topics:</legend>
         <div class="input" id="topics">
@@ -47,7 +48,20 @@ stylesheets:
             values for this field for consistency.</p>
         </div>
       </fieldset>
-  
+
+      <fieldset class="row">
+        <legend class="label">Challenge Statements:</legend>
+        <div class="input" id="challenges">
+          {% for challenge in site.data.challenges %}
+          <div class="toggle">
+            <input id="{{ challenge[0] }}" type="checkbox" name="challenges" value="{{ challenge[0] }}">
+            <label for="{{ challenge[0] }}">{{ challenge[1].title }}</label>
+          </div>
+          {% endfor %}
+          <p class="desc">Which challenge statements this dataset may help with (optional)</p>
+        </div>
+      </fieldset>
+
       <div class="row">
         <label for="tags" class="label">Tags:</label>
         <div class="input">
@@ -55,7 +69,7 @@ stylesheets:
           <p class="desc">Array of keywords/tags associated with the dataset. Helps with searches and grouping.</p>
         </div>
       </div>
-  
+
       <div class="row">
         <label for="licence" class="label" id="label-licence">Licence:</label>
         <div class="input">
@@ -64,7 +78,7 @@ stylesheets:
             resources are released under.</p>
         </div>
       </div>
-  
+
       <div class="row">
         <label for="createdAt" class="label">Creation date:</label>
         <div class="input">
@@ -74,7 +88,7 @@ stylesheets:
                 href="https://en.wikipedia.org/wiki/ISO_8601">ISO8601 format</a></span></p>
         </div>
       </div>
-  
+
       <div class="row">
         <label for="updatedAt" class="label">Last updated:</label>
         <div class="input">
@@ -84,7 +98,7 @@ stylesheets:
                 format</a>.</span></p>
         </div>
       </div>
-  
+
       <div class="row">
         <label for="update_frequency" class="label">Update frequency:</label>
         <div class="input">
@@ -102,7 +116,7 @@ stylesheets:
           <p class="desc">How often the resources are updated. See examples for allowed values.</p>
         </div>
       </div>
-  
+
       <div class="row">
         <label for="title" class="label">Title:</label>
         <div class="input">
@@ -110,7 +124,7 @@ stylesheets:
           <p class="desc">The title for the dataset.</p>
         </div>
       </div>
-  
+
       <div class="row">
         <label for="url" class="label">Homepage:</label>
         <div class="input">
@@ -118,7 +132,7 @@ stylesheets:
           <p class="desc">URL for the source/homepage of the dataset.</p>
         </div>
       </div>
-  
+
       <div class="row">
         <label for="author" class="label">Author:</label>
         <div class="input">
@@ -126,7 +140,7 @@ stylesheets:
           <p class="desc">Who created / published the data. This may be an organisation responsible for a dataset.</p>
         </div>
       </div>
-  
+
       <div class="row">
         <label for="author_email" class="label">Author email:</label>
         <div class="input">
@@ -134,7 +148,7 @@ stylesheets:
           <p class="desc">Contact email for author specified above if available / applicable</p>
         </div>
       </div>
-  
+
       <div class="row">
         <label for="maintainer" class="label">Maintainer:</label>
         <div class="input">
@@ -143,7 +157,7 @@ stylesheets:
             the quality of the data?</p>
         </div>
       </div>
-  
+
       <div class="row">
         <label for="maintainer_email" class="label">Maintainer email:</label>
         <div class="input">
@@ -151,7 +165,7 @@ stylesheets:
           <p class="desc">Email for maintainer named above, if available.</p>
         </div>
       </div>
-  
+
       <div class="row">
         <label for="description" class="label">Description:</label>
         <div class="input">
@@ -159,7 +173,7 @@ stylesheets:
           <p class="desc">Brief description of the dataset.</p>
         </div>
       </div>
-  
+
       <div class="row">
         <p class="label">Resources</p>
         <div class="input">
@@ -177,7 +191,7 @@ stylesheets:
                     <p class="desc">Type of resource.</p>
                   </div>
                 </div>
-  
+
                 <div class="row">
                   <label for="resources-url-0" class="label">URL:<sup>*</sup></label>
                   <div class="input">
@@ -186,7 +200,7 @@ stylesheets:
                       e.g. http://website.com/file1.csv, not http://website.com/downloads</p>
                   </div>
                 </div>
-  
+
                 <div class="row">
                   <label for="resources-format-0" class="label">Format:<sup>*</sup></label>
                   <div class="input">
@@ -194,7 +208,7 @@ stylesheets:
                     <p class="desc">File type, or 'html' for a website etc.</p>
                   </div>
                 </div>
-  
+
                 <div class="row">
                   <label for="resources-check_size-0" class="label">Size:</label>
                   <div class="input">
@@ -202,7 +216,7 @@ stylesheets:
                     <p class="desc">Size of resource in bytes</p>
                   </div>
                 </div>
-  
+
                 <div class="row">
                   <label for="resources-temporal_coverage_from-0" class="label">Coverage start date<span class="no-js">
                       (YYYY-MM-DD)</span>:</label>
@@ -213,7 +227,7 @@ stylesheets:
                           href="https://en.wikipedia.org/wiki/ISO_8601">ISO8601 format</a>.</span></p>
                   </div>
                 </div>
-  
+
                 <div class="row">
                   <label for="resources-temporal_coverage_to-0" class="label">Coverage end date<span class="no-js">
                       (YYYY-MM-DD)</span>:</label>
@@ -224,7 +238,7 @@ stylesheets:
                           href="https://en.wikipedia.org/wiki/ISO_8601">ISO8601 format</a>.</span></p>
                   </div>
                 </div>
-  
+
                 <div class="row">
                   <label for="resources-title-0" class="label">Title:</label>
                   <div class="input">
@@ -232,7 +246,7 @@ stylesheets:
                     <p class="desc">A name for the resource.</p>
                   </div>
                 </div>
-  
+
                 <div class="row">
                   <label for="resources-description-0" class="label">Description:</label>
                   <div class="input">
@@ -259,7 +273,7 @@ stylesheets:
                     <p class="desc">URL of the referenced dataset if it isn't contained in this index.</p>
                   </div>
                 </div>
-  
+
                 <div class="row">
                   <label for="references-description-0" class="label">Description:<sup>*</sup></label>
                   <div class="input">
@@ -274,7 +288,7 @@ stylesheets:
             this dataset. Dependencies should be referred to by index ID or URL.</p>
         </div>
       </div>
-  
+
       <div class="row">
         <div></div>
         <div class="form-submit">
@@ -286,13 +300,13 @@ stylesheets:
             an MIT licence.</p>
         </div>
       </div>
-  
+
       <label for="json">Output</label>
       <textarea id="json" name="json"></textarea>
-  
-  
+
+
     </form>
-  
+
   </div>
 </div>
 
