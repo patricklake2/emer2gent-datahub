@@ -6,3 +6,4 @@ _drafts
 vendor
 node_modules
 **/.DS_Store
+.devcontainer

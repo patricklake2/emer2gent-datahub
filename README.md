@@ -1,4 +1,5 @@
 # Emergent Alliance Datahub
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c71b2d4d-fc8a-4813-b76d-e7ca88211d98/deploy-status)](https://app.netlify.com/sites/emer2gent-data/deploys)
 ![Catalogue Updates](https://github.com/patricklake2/emer2gent-datahub/workflows/Update%20Catalogue/badge.svg)
 
 This is the repo for the [Emergent Alliance Datahub website](https://emer2gent.netlify.app).
