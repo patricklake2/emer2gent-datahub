@@ -600,7 +600,7 @@
 
 
   function buildJSONLine(name, json) {
-    if (document.forms['emer2gent-add'].elements[name].value) return (json ? json + ',\n' : '') + '\t"' + name + '":"' + JSON.stringify(document.forms['emer2gent-add'].elements[name].value) + '"';
+    if (document.forms['emer2gent-add'].elements[name].value) return (json ? json + ',\n' : '') + '\t"' + name + '":' + JSON.stringify(document.forms['emer2gent-add'].elements[name].value) + '';
     else return json;
   }
 
