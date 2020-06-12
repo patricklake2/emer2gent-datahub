@@ -1,0 +1,37 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.122.1/containers/ruby-2
+{
+	"name": "Ruby 2",
+	"dockerFile": "Dockerfile",
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"rebornix.Ruby"
+	],
+	
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [4000],
+
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/emer2gent-datahub,type=bind,consistency=delegated",
+
+	"workspaceFolder": "/workspaces/emer2gent-datahub",
+
+	"mounts": [
+		"source=gems,target=/usr/local/bundle/,type=volume"
+	],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "chown -R vscode /usr/local/bundle",
+
+	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode",
+
+	"remoteEnv": {
+		"GEM_HOME": "/usr/local/bundle"
+	}
+}

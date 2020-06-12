@@ -40,7 +40,7 @@ stylesheets:
         <div class="input" id="topics">
           {% for topic in site.data.topics %}
           <div class="toggle">
-            <input id="{{ topic[0] }}" type="checkbox" name="topics" value="{{ topic[0] }}">
+            <input id="{{ topic[0] }}" type="checkbox" name="topics-{{ forloop.index }}" value="{{ topic[0] }}">
             <label for="{{ topic[0] }}">{{ topic[1].title }}</label>
           </div>
           {% endfor %}
@@ -54,7 +54,7 @@ stylesheets:
         <div class="input" id="challenges">
           {% for challenge in site.data.challenges %}
           <div class="toggle">
-            <input id="{{ challenge[0] }}" type="checkbox" name="challenges" value="{{ challenge[0] }}">
+            <input id="{{ challenge[0] }}" type="checkbox" name="challenges-{{ forloop.index }}" value="{{ challenge[0] }}">
             <label for="{{ challenge[0] }}">{{ challenge[1].title }}</label>
           </div>
           {% endfor %}
@@ -292,8 +292,8 @@ stylesheets:
       <div class="row">
         <div></div>
         <div class="form-submit">
-          <input type="submit" class="emergent button" value="Submit to public index" /> or <button type="button"
-            id="download">Download as JSON</button>
+          <input type="submit" class="emergent button" name="action" value="Submit to public index" />
+          <input type="submit" class="button" name="action" value="Download as JSON" />
           <p class="small">If you choose to submit to the public index, the meta data provided above will be stored in
             a public repository on Github. By submitting you agree that the meta data you provide (including any
             optional email addresses provided) can be published by <a href="https://odileeds.org/">ODI Leeds</a> under
