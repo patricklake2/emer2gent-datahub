@@ -25,15 +25,25 @@
     e.currentTarget.setAttribute('class', '');
     msg = document.getElementById('id-warning');
     if (msg) e.currentTarget.parentNode.removeChild(msg);
-    for (k = 0; k < keys.length; k++) {
-      if (keys[k] == e.currentTarget.value) {
-        e.currentTarget.setAttribute('class', "invalid");
-        element = document.createElement('div');
-        element.id = "id-warning";
-        element.setAttribute('class', "error msg");
-        element.innerHTML = "This ID already exists in the public index";
-        e.currentTarget.insertAdjacentElement('afterend', element);
-        continue;
+    let regex = /^[A-Za-z0-9-]+$/;
+    if(!regex.test(e.currentTarget.value)) {
+      e.currentTarget.setAttribute('class', "invalid");
+      element = document.createElement('div');
+      element.id = "id-warning";
+      element.setAttribute('class', "error msg");
+      element.innerHTML = "Please use letters, numbers, and hyphens only.";
+      e.currentTarget.insertAdjacentElement('afterend', element);
+    } else {
+      for (k = 0; k < keys.length; k++) {
+        if (keys[k] == e.currentTarget.value) {
+          e.currentTarget.setAttribute('class', "invalid");
+          element = document.createElement('div');
+          element.id = "id-warning";
+          element.setAttribute('class', "error msg");
+          element.innerHTML = "This ID already exists in the public index";
+          e.currentTarget.insertAdjacentElement('afterend', element);
+          continue;
+        }
       }
     }
   });
