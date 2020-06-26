@@ -11,7 +11,6 @@ data:
       url: >-
         https://docs.google.com/spreadsheets/d/e/2PACX-1vTxATUFm0tR6Vqq-UAOuqQ-BoQDvYYEe-BmJ20s50yBKDHEifGofP2P1LJ4jWFIu0Pb_4kRhQeyhHmn/pub?gid=0&single=true&output=csv
       format: csv
-  references: []
   id: notams-iata
   sharing: public
   tags: 'iata, notams, aviation'

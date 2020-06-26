@@ -11,7 +11,6 @@ data:
     - type: cat
       url: 'https://github.com/rs-delve/covid19_datasets'
       format: git
-  references: []
   id: rs-delve
   sharing: public
   tags: 'Economy, Governments, Oxford'

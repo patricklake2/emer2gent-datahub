@@ -6,9 +6,6 @@ data:
     - travel
   challenges:
     - rail
-  resources:
-    - type: data
-  references: []
   id: NetworkRailOpenDataMirror
   sharing: alliance
   tags: timetable train-movement train-describer
