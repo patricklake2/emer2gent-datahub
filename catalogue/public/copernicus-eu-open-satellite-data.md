@@ -2,8 +2,6 @@
 layout: dataset
 title: Catalogue | copernicus-eu-open-satellite-data
 data:
-  resources:
-    - type: data
   id: copernicus-eu-open-satellite-data
   sharing: public
   tags: 'Satellite Data, Space Data'

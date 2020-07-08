@@ -6,8 +6,6 @@ data:
     - timeline
   challenges:
     - aloha
-  resources:
-    - type: data
   id: korea-covid-data-province-city
   sharing: public
   tags: south korea covid19 timeseries history daily cases data KCDC
