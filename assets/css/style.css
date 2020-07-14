@@ -14,8 +14,32 @@ a.s1-bg:visited {
   color: white;
 }
 .emergent-header {
-  background-image: url('/assets/img/emergent-bg-small.png');
+  /* background-image: url('/assets/img/emergent-bg-small.png'); */
+  background-image: url('/assets/img/header.jpg');
+  min-height: 186px !important;
 }
+@media only screen and (max-width: 580px) {
+  .emergent-header {
+    background-color: #0b002a;
+    background-image: url('/assets/img/small-header.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+.emergent-header .flex {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 1em;
+  flex-wrap: wrap;
+}
+.emergent-header .flex > * {
+  padding: 0;
+  margin: 0;
+}
+
 .emergent-header h1 {
   padding: 1em;
   font-size: 3rem;
