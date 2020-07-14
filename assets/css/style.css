@@ -4,15 +4,26 @@
     This stylesheet is just some minor tweaks we have made.
 */
 
+/* override colours */
+a.s1-bg, a.s1-bg:visited {
+  background-color: #F4B000;
+  color: #0b002a;
+}
+
+a.c4-bg, a.c4-bg:visited {
+  background-color: #FFBB02;
+  color: #0b002a;
+}
+
 /* header and homepage */
 #top {
   text-align: center;
   margin: 20px 0;
   padding: 25px;
-}
-a.s1-bg:visited {
+  background-color: #0b002a;
   color: white;
 }
+
 .emergent-header {
   /* background-image: url('/assets/img/emergent-bg-small.png'); */
   background-image: url('/assets/img/header.jpg');
