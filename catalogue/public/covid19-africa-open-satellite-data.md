@@ -2,11 +2,6 @@
 layout: dataset
 title: Catalogue | covid19-africa-open-satellite-data
 data:
-  topics: []
-  challenges: []
-  resources:
-    - type: data
-  references: []
   id: covid19-africa-open-satellite-data
   sharing: public
   tags: 'COVID19, Africa'

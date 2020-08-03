@@ -6,10 +6,6 @@ data:
     - travel
     - b2c
     - timeline
-  challenges: []
-  resources:
-    - type: data
-  references: []
   id: Cruise-Data-Vertical-Knowledge
   sharing: alliance
   tags: 'Cruise, cruise.com, travel, Vertical-Knowledge'

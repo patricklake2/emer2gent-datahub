@@ -6,10 +6,6 @@ data:
     - travel
     - b2c
     - timeline
-  challenges: []
-  resources:
-    - type: data
-  references: []
   id: US-Short-Term-Home-Rentals-Vertical-Knowledge
   sharing: alliance
   tags: 'home-rentals, vertical-knowledge'

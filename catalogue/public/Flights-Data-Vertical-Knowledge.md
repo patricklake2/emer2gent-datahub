@@ -6,9 +6,6 @@ data:
     - travel
   challenges:
     - aviation
-  resources:
-    - type: data
-  references: []
   id: Flights-Data-Vertical-Knowledge
   sharing: alliance
   tags: 'Flights, Airlines, COVID, Open-Source, Vertical-Knowledge'
